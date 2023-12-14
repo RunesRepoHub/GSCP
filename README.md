@@ -1,17 +1,15 @@
 # GSCP
 Game Server Control Panel, this is an easy way to deploy and manage docker game servers.
 
-
-
 ## Docker Setup
 
 1. - [x] Create Dockerfiles for the Node.js app, PostgreSQL database and the web interface.
 
-2. Set up Docker Compose for orchestrating the containers.
+2. - [x] Set up Docker Compose for orchestrating the containers.
 
 ## Node.js Application
 
-1. Implement basic Node.js application with Express.js.
+1. - [x] Implement basic Node.js application with Express.js.
 
 2. Set up SSH functionality for executing commands on Linux machines.
 
@@ -31,7 +29,7 @@ Game Server Control Panel, this is an easy way to deploy and manage docker game 
 
 ## PostgreSQL Database
 
-1. Set up PostgreSQL database connection in the Node.js app.
+1. - [x] Set up PostgreSQL database connection in the Node.js app.
 
 2. Design and create the necessary tables for storing game server information.
 
@@ -87,7 +85,7 @@ Game Server Control Panel, this is an easy way to deploy and manage docker game 
 
 ## Web interface
 
-1. Create a simple web interface using HTML, CSS, and possibly a front-end framework (e.g., React, Vue).
+1. Create a simple web interface using HTML, CSS, and Nginx.
 
 2. Implement forms or UI components for interacting with the Node.js API.
 
