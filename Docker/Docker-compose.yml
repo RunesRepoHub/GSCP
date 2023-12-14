@@ -1,0 +1,16 @@
+version: '3'
+services:
+  web:
+    image: nginx:latest
+    ports:
+      - "3000:3000"
+  node:
+    image: nodejs:latest
+    ports:
+      - "4000:4000"
+  postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: Test123
+      POSTGRES_DB: Game_Servers
