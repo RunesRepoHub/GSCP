@@ -5,7 +5,7 @@ Game Server Control Panel, this is an easy way to deploy and manage docker game 
 
 ## Docker Setup
 
-1. Create Dockerfiles for the Node.js app, PostgreSQL database and the web interface. - [x]
+1. - [x] Create Dockerfiles for the Node.js app, PostgreSQL database and the web interface.
 
 2. Set up Docker Compose for orchestrating the containers.
 
