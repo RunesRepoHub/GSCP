@@ -1,16 +1,51 @@
 version: '3'
 services:
-  web:
-    image: nginx:latest
-    ports:
-      - "3000:3000"
-  node:
-    image: nodejs:latest
-    ports:
-      - "4000:4000"
   postgres:
-    image: postgres:latest
+    image: gscp-pg:${Version}
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 100M
+        reservations:
+          cpus: '0.25'
+          memory: 50M
+    restart: always
     environment:
       POSTGRES_USER: root
       POSTGRES_PASSWORD: Test123
       POSTGRES_DB: Game_Servers
+  node:
+    image: gscp-node-api:${Version}
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 100M
+        reservations:
+          cpus: '0.25'
+          memory: 50M
+    restart: always
+    environment:
+      - POSTGRES_DATABASE=Game_Servers
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=Test123
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres
+  web:
+    image: gscp-web:${Version}
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 100M
+        reservations:
+          cpus: '0.25'
+          memory: 50M
+    restart: always
+    ports:
+      - "8080:80"
+    depends_on:
+      - cnc-db
