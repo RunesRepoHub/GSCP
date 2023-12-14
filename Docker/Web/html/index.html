@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <div class="overskift">
+    <h1>CnC-WebGUI</h1>
+  <a href="Php/packages.php">Packages</a>
+  <a href="Php/cronjob.php">Cronjobs</a>
+  <a href="Php/overview.php">Overview</a>
+  </div>
+
+<div style="overflow:auto">
+  <div class="menu">
+    <h2>Help/Wiki</h2>
+    <div class="links">
+    <a href="https://runesrepohub.github.io/CnC-WebGUI/index.html">Getting Started</a>
+    <a href="https://runesrepohub.github.io/CnC-WebGUI/requirement.html">Requirements</a>
+    <a href="https://runesrepohub.github.io/CnC-WebGUI/install.html">Installation</a>
+    <a href="#">#</a>
+    <a href="#">#</a>
+    <a href="https://runesrepohub.github.io/CnC-WebGUI/changelog.html">Change log</a>
+    <a href="https://runesrepohub.github.io/CnC-WebGUI/crud.html">CRUD Source Code</a>
+    <h2>Github Repos</h2>
+    <a href="https://github.com/RunesRepoHub/CnC-WebGUI">CnC-WebGUI</a>
+    <a href="https://github.com/RunesRepoHub/CnC-Agent">CnC-Agent</a>
+    </div>
+  </div>
+
+
+  <div class="main">
+    <h1>CnC-WebGUI/CnC-Agent Change log</h1>
+    <br>
+    <div class="products-box">
+    <article>
+    <h2>Latest Change Log</h2>
+    <iframe src="https://runesrepohub.github.io/CnC-WebGUI/changelog.html"></iframe>
+    <p>See the latest updates in the newest version.</p>
+    <a href="https://runesrepohub.github.io/CnC-WebGUI/changelog.html">Learn More</a>
+    </article>
+    </div>
+  </div>
+
+  <div class="right">
+    <h2>Features/Functions</h2>
+    <button class="accordion">#</button>
+    <div class="panel">
+    <p>#</p>
+    </div>
+
+    <button class="accordion">#</button>
+    <div class="panel">
+    <p>#</p>
+    </div>
+
+    <button class="accordion">#</button>
+    <div class="panel">
+    <p>#</p>
+    </div>
+
+    <button class="accordion">#</button>
+    <div class="panel">
+    <p>#</p>
+    </div>
+
+    <button class="accordion">#</button>
+    <div class="panel">
+    <p>#</p>
+    </div>
+
+    <button class="accordion">#</button>
+    <div class="panel">
+    <p>#</p>
+    </div>
+
+    <button class="accordion">#</button>
+    <div class="panel">
+    <p>#</p>
+    </div>
+
+    <button class="accordion">#</button>
+    <div class="panel">
+    <p>#</p>
+    </div>
+  </div>
+</div>
+
+<div class="footer">Made By RPH <br> https://rp-helpdesk.com</div>
+
+
+<script>
+  var acc = document.getElementsByClassName("accordion");
+  var i;
+  
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var panel = this.nextElementSibling;
+      if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+      } 
+    });
+  }
+  </script>
+
+
+</body>
+</html>
+
