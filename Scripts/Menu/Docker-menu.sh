@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+source ~/GSCP/Core/Core.sh
+
 echo "Please select an option:"
 echo "1) Arma Reforger Server"
 echo "2) CS2 Server"

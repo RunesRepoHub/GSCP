@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # GSCP/Scripts/Docker-compose/Arma3.sh
 
+source ~/GSCP/Core/Core.sh
+
 echo "Configuring and starting an Arma 3 server using Docker with mods support..."
 
 # Prompt the user for configuration settings

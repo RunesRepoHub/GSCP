@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # GSCP/Scripts/Docker-compose/CS2.sh
 
+source ~/GSCP/Core/Core.sh
+
 echo "Configuring and starting CS2 server using Docker..."
 
 # Prompt the user for configuration settings

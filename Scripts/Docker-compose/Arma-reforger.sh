@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # GSCP/Scripts/Docker-compose/Arma-reforger.sh
 
+source ~/GSCP/Core/Core.sh
+
 echo "Configuring and starting an Arma Reforger server using Docker with mods support..."
 
 # Prompt the user for configuration settings

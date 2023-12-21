@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+source ~/GSCP/Core/Core.sh
+
 echo "Please select an option:"
 echo "1) Docker Menu"
 echo "2) Option 2"
@@ -18,8 +20,11 @@ case $option in
         # Add your command for Option 2 here
         ;;
     3)
-        echo "You chose Option 3"
-        # Add your command for Option 3 here
+        echo -e "${Green}Updating...${NC}"
+        cd $ROOT_FOLDER
+        git pull
+        echo -e "${Green}You can now run the script fully updated${NC}"
+        exit 0
         ;;
     4)
         echo "Exiting..."

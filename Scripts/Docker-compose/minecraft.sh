@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+source ~/GSCP/Core/Core.sh
+
 # This script will configure and start a Docker container running a Minecraft server with mod support.
 
 echo "Welcome to the Minecraft Docker setup script with mod support!"
