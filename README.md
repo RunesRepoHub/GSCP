@@ -1,6 +1,10 @@
 # GSCP
 Game Server Control Panel, this is an easy way to deploy and manage docker game servers.
 
+## OS Support: (Tested)
+
+* Debian 11
+
 ## Game Support:
 
 * Arma 3

@@ -5,7 +5,7 @@ source ~/GSCP/Core/Core.sh
 echo "Please select an option:"
 echo "1) Docker Menu"
 echo "2) Option 2"
-echo "3) Option 3"
+echo "3) Update"
 echo "4) Exit"
 
 read -p "Enter your choice [1-4]: " option
