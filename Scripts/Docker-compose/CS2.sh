@@ -7,6 +7,7 @@ echo "Configuring and starting CS2 server using Docker..."
 
 # Prompt the user for configuration settings
 read -p "Enter the CS2 server version (e.g., 'latest', '1.2.3'): " version
+read -p "Enter the SRCDS token: " token
 read -p "Enter the server port (default is 27015): " port
 read -p "Enter the amount of RAM to allocate for the server (e.g., '2G', '1024M'): " ram
 read -p "Enter the URL for the server configuration file, or leave blank for default: " config_url
@@ -15,6 +16,7 @@ read -p "Enter the URL for the server configuration file, or leave blank for def
 version=${version:-latest}
 port=${port:-27015}
 ram=${ram:-1024M}
+token=${token:-YOURTOKEN}  # Replace 'YOURTOKEN' with a default token if you have one
 
 # Create a directory for the server configuration if a URL is provided
 config_volume_arg=""
@@ -33,12 +35,11 @@ fi
 
 # Pull the CS2 server Docker image
 echo "Pulling the CS2 server Docker image..."
-docker pull joedwards32/cs2
-:${version}
+docker pull joedwards32/cs2:${version}
 
-# Run the CS2 server Docker container
+# Run the CS2 server Docker container with updated format
 echo "Starting the CS2 server Docker container..."
-docker run -d -p ${port}:27015 -e RAM=${ram} ${config_volume_arg} --name cs2-server joedwards32/cs2
-:${version}
+docker run -d --name=cs2-server -e SRCDS_TOKEN=${token} -p ${port}:27015/tcp -p ${port}:27015/udp -p 27020:27020/tcp -e RAM=${ram} ${config_volume_arg} joedwards32/cs2:${version}
 
 echo "CS2 server is now running on port ${port} with ${ram} of RAM."
+
