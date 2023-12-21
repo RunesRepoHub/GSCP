@@ -34,11 +34,12 @@ else
 fi
 
 # Pull the Arma 3 server Docker image
-echo "Pulling the Arma 3 server Docker image..."
-docker pull armaserver/arma3:${version}
+echo "Pulling the Arma 3 server Docker image from GitHub Container Registry..."
+docker pull ghcr.io/brettmayson/arma3server/arma3server:${version}
 
 # Run the Arma 3 server Docker container with mod support
 echo "Starting the Arma 3 server Docker container with mod support..."
-docker run -d -p ${port}:2302 -p ${port}:2303 -p ${port}:2304 -p ${port}:2305 -e RAM=${ram} ${mod_volume_arg} --name arma3-server armaserver/arma3:${version}
+docker run -d -p ${port}:2302 -p ${port}:2303 -p ${port}:2304 -p ${port}:2305 -e RAM=${ram} ${mod_volume_arg} --name arma3-server ghcr.io/brettmayson/arma3server/arma3server:${version}
 
 echo "Arma 3 server is now running on port ${port} with ${ram} of RAM."
+
