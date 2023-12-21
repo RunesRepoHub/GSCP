@@ -12,12 +12,12 @@ echo ""
 echo "Creating named volume for SteamCMD login session..."
 docker volume create steamcmd_login_volume
 
-# Activate SteamCMD login session
+# Activate SteamCMD login session and wait for it to finish
 echo "Activating SteamCMD login session..."
 docker run -it --rm \
   -v "steamcmd_login_volume:/home/steam/Steam" \
   cm2network/steamcmd \
-  bash /home/steam/steamcmd/steamcmd.sh +login "$STEAMUSER" "$ACCOUNTPASSWORD" +quit
+  bash -c '/home/steam/steamcmd/steamcmd.sh +login "$STEAMUSER" "$ACCOUNTPASSWORD" +quit'
 
 # Set up CS2 dedicated server data directory
 echo "Setting up CS2 dedicated server data directory..."
