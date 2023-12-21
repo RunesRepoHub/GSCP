@@ -12,6 +12,8 @@ Game Server Control Panel, this is an easy way to deploy and manage docker game 
 
 ![Alt text](image.png)
 
+![Alt text](image-1.png)
+
 Run the setup via the command below.
 
 Follow the setup "guide" after.
