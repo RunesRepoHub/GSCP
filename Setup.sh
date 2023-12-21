@@ -47,10 +47,10 @@ git clone --branch "$branch" $GITHUB_REPO_URL
 
 
 # Add alias for the Main Menu
-echo 'alias gscp-menu="bash ~/GSCP/Scripts/Menu/Main-Menu.sh"' >> ~/.bashrc
+echo 'alias gscp-menu="bash ~/GSCP/Scripts/Menu/Main-menu.sh"' >> ~/.bashrc
 
 sleep 3 
 
-bash ~/GSCP/Scripts/Menu/Main-Menu.sh
+bash ~/GSCP/Scripts/Menu/Main-menu.sh
 
 
