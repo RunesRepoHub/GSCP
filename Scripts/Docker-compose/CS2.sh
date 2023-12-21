@@ -33,10 +33,12 @@ fi
 
 # Pull the CS2 server Docker image
 echo "Pulling the CS2 server Docker image..."
-docker pull cs2server:${version}
+docker pull joedwards32/cs2
+:${version}
 
 # Run the CS2 server Docker container
 echo "Starting the CS2 server Docker container..."
-docker run -d -p ${port}:27015 -e RAM=${ram} ${config_volume_arg} --name cs2-server cs2server:${version}
+docker run -d -p ${port}:27015 -e RAM=${ram} ${config_volume_arg} --name cs2-server joedwards32/cs2
+:${version}
 
 echo "CS2 server is now running on port ${port} with ${ram} of RAM."
