@@ -1,45 +1,34 @@
-#!/usr/bin/env bash
-# GSCP/Scripts/Docker-compose/CS2.sh
+#!/bin/bash
 
-source ~/GSCP/Core/Core.sh
+echo "CS2 Dedicated Server Setup Script"
+echo "---------------------------------"
 
-echo "Configuring and starting CS2 server using Docker..."
+# Prompt for Steam credentials
+read -p "Enter your Steam username: " STEAMUSER
+read -sp "Enter your Steam password: " ACCOUNTPASSWORD
+echo ""
 
-# Prompt the user for configuration settings
-read -p "Enter the CS2 server version (e.g., 'latest', '1.2.3'): " version
-read -p "Enter the SRCDS token: " token
-read -p "Enter the server port (default is 27015): " port
-read -p "Enter the amount of RAM to allocate for the server (e.g., '2G', '1024M'): " ram
-read -p "Enter the URL for the server configuration file, or leave blank for default: " config_url
+# Create named volume for SteamCMD login session
+echo "Creating named volume for SteamCMD login session..."
+docker volume create steamcmd_login_volume
 
-# Set defaults if user input is empty
-version=${version:-latest}
-port=${port:-27015}
-ram=${ram:-1024M}
-token=${token:-YOURTOKEN}  # Replace 'YOURTOKEN' with a default token if you have one
+# Activate SteamCMD login session
+echo "Activating SteamCMD login session..."
+docker run -it --rm \
+  -v "steamcmd_login_volume:/home/steam/Steam" \
+  cm2network/steamcmd \
+  bash /home/steam/steamcmd/steamcmd.sh +login "$STEAMUSER" "$ACCOUNTPASSWORD" +quit
 
-# Create a directory for the server configuration if a URL is provided
-config_volume_arg=""
-if [[ -n "$config_url" ]]; then
-    echo "Setting up server configuration..."
-    config_dir="cs2-config"
-    mkdir -p "${config_dir}"
-    cd "${config_dir}"
-    echo "Downloading server configuration from ${config_url}..."
-    curl -o server-config.cfg "${config_url}"
-    cd ..
-    config_volume_arg="-v $(pwd)/${config_dir}:/path/to/cs2/config"
-else
-    echo "Using default server configuration."
-fi
+# Set up CS2 dedicated server data directory
+echo "Setting up CS2 dedicated server data directory..."
+mkdir -p "$(pwd)/cs2-data"
+chmod 777 "$(pwd)/cs2-data"
 
-# Pull the CS2 server Docker image
-echo "Pulling the CS2 server Docker image..."
-docker pull joedwards32/cs2:${version}
+# Run CS2 dedicated server
+echo "Running CS2 dedicated server..."
+docker run -d --net=host \
+  -v "$(pwd)/cs2-data:/home/steam/cs2-dedicated/" \
+  -v "steamcmd_login_volume:/home/steam/Steam" \
+  --name=cs2-dedicated -e STEAMUSER="$STEAMUSER" cm2network/cs2
 
-# Run the CS2 server Docker container with updated format
-echo "Starting the CS2 server Docker container..."
-docker run -d --name=cs2-server -e SRCDS_TOKEN=${token} -p ${port}:27015/tcp -p ${port}:27015/udp -p 27020:27020/tcp -e RAM=${ram} ${config_volume_arg} joedwards32/cs2:${version}
-
-echo "CS2 server is now running on port ${port} with ${ram} of RAM."
-
+echo "CS2 Dedicated Server is now running."
