@@ -14,9 +14,9 @@ Game Server Control Panel, this is an easy way to deploy and manage docker game 
 
 ## How to use
 
-![Alt text](image.png)
+![Alt text](Docs/image.png)
 
-![Alt text](image-1.png)
+![Alt text](Docs/image-1.png)
 
 Run the setup via the command below.
 
@@ -38,3 +38,6 @@ If you want to access the script again after exiting it use the command below.
 main-menu
 ```
 
+## To Do list
+
+[To-Do List](Docs/to-do-list.md)
