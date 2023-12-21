@@ -13,7 +13,7 @@ read -p "Enter your choice [1-4]: " option
 case $option in
     1)
         echo "Launching Docker Menu..."
-        ./GSCP/Scripts/Menu/Docker-menu.sh
+        bash $ROOT_FOLDER/$SCRIPT_FOLDER/$MENU_FOLDER/$DOCKER
         ;;
     2)
         echo "You chose Option 2"

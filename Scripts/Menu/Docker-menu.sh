@@ -14,19 +14,19 @@ read -p "Enter your choice [1-5]: " option
 case $option in
     1)
         echo "Starting Arma Reforger Server..."
-        ./GSCP/Scripts/Docker-compose/Arma-reforger.sh
+        bash $ROOT_FOLDER/$DOCKER_COMPOSE_FOLDER/$ARMA_REFORGER
         ;;
     2)
         echo "Starting CS2 Server..."
-        ./GSCP/Scripts/Docker-compose/CS2.sh
+        bash $ROOT_FOLDER/$DOCKER_COMPOSE_FOLDER/$CS2
         ;;
     3)
         echo "Starting Arma 3 Server..."
-        ./GSCP/Scripts/Docker-compose/Arma3.sh
+        bash $ROOT_FOLDER/$DOCKER_COMPOSE_FOLDER/$ARMA3
         ;;
     4)
         echo "Starting Minecraft Server..."
-        ./GSCP/Scripts/Docker-compose/minecraft.sh
+        bash $ROOT_FOLDER/$DOCKER_COMPOSE_FOLDER/$MINECRAFT
         ;;
     5)
         echo "Exiting..."

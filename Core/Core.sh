@@ -23,29 +23,19 @@ NC='\e[0m'  # Reset to default
 ############################################################################
 
 ROOT_FOLDER=~/GSCP
-SCRIPT_FOLDER=Script
-INSTALLER_FOLDER=Installers
+SCRIPT_FOLDER=Scripts
 MENU_FOLDER=Menu
+DOCKER_COMPOSE_FOLDER=Docker-compose
 
-## Installers Scripts
-
-CLOUDFLARE_TUNNEL="Cloudflare-Tunnel.sh"
-MEDIACMS="MediaCMS.sh"
-UPTIME_KUMA="Uptime-Kuma.sh"
-VAULTWARDEN="Vaultwarden.sh"
-NTFY="NTFY.sh"
-N8N="N8N.sh"
-POSTGRES="Postgres.sh"
-MYSQL="MySQL.sh"
 
 ## Menu Scripts
 
-DOCKER="Docker.sh"
+DOCKER="Docker-menu.sh"
 MAIN_MENU="Main-Menu.sh"
-QUICK_INSTALLERS="Quick-Installers.sh"
-RRH_SOFTWARE="RRH-Software.sh"
 
-## Quick Installers Scripts
+## Docker compose
 
-STARSHIP="Starship-Installer.sh"
-TAILSCALE="Tailscale-Installer.sh"
+ARMA_REFORGER="Arma-reforger.sh"
+CS2="CS2.sh"
+ARMA3="Arma3.sh"
+MINECRAFT="minecraft.sh"
