@@ -40,4 +40,6 @@ main-menu
 
 ## To Do list
 
+Features and functions planned but not added yet.
+
 [To-Do List](Docs/To-do-list.md)
