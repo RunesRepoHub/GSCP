@@ -27,7 +27,7 @@ When asked what branch do you want to use, select the branch you want to use. Th
 If you want to the nightly updated code base, then use the "PoC" branch.
 
 ```
-bash <(wget -qO- https://raw.githubusercontent.com/RunesRepoHub/RRHQD/Dev/Setup.sh)
+bash <(wget -qO- https://raw.githubusercontent.com/RunesRepoHub/GSCP/Dev/Setup.sh)
 ```
 
 ### Custom Commands 
