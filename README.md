@@ -35,7 +35,7 @@ bash <(wget -qO- https://raw.githubusercontent.com/RunesRepoHub/GSCP/Dev/Setup.s
 If you want to access the script again after exiting it use the command below.
 
 ```
-main-menu
+gscp-menu
 ```
 
 ## To Do list
